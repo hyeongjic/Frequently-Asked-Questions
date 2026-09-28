@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from "vue";
 import FaqSearchResults from "./FaqSearchResults.vue";
 
 const props = defineProps({
@@ -18,6 +19,18 @@ const emit = defineEmits([
   "feedback",
   "reset"
 ]);
+
+const answerImages = computed(() => {
+  const images = props.activeAnswer?.images ?? [];
+  if (images.length === 0) {
+    return [{ src: "/images/faq-placeholder.svg", alt: "FAQ 답변 이미지 예시" }];
+  }
+
+  return images.map((image) => typeof image === "string"
+    ? { src: image, alt: props.activeAnswer.title }
+    : image
+  );
+});
 </script>
 
 <template>
@@ -37,6 +50,11 @@ const emit = defineEmits([
 
     <div v-else-if="props.activeAnswer" class="rounded-xl border-l-4 border-[var(--accent)] bg-[var(--page-bg)] p-5 sm:p-6">
       <p class="leading-7 text-[var(--ink)]">{{ props.activeAnswer.text }}</p>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <figure v-for="(image, index) in answerImages" :key="`${image.src}-${index}`" class="w-full max-w-64 overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)]">
+          <img class="aspect-square w-full object-cover" :src="image.src" :alt="image.alt || props.activeAnswer.title" loading="lazy">
+        </figure>
+      </div>
       <div class="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--line)] pt-4">
         <button class="inline-flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm font-semibold text-[var(--muted)] transition hover:text-[var(--accent)]" type="button" @click="emit('copy-answer')">
           <svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>

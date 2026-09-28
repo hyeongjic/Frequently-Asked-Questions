@@ -47,12 +47,22 @@ function selectOption(option) {
     return;
   }
 
-  if (option.answer) activeAnswer.value = { title: option.text, text: option.answer };
+  if (option.answer) {
+    activeAnswer.value = {
+      title: option.text,
+      text: option.answer,
+      images: option.images ?? []
+    };
+  }
 }
 
 function selectSearchResult(result) {
   historyStack.value = ["start", result.stepKey];
-  activeAnswer.value = { title: result.text, text: result.answer };
+  activeAnswer.value = {
+    title: result.text,
+    text: result.answer,
+    images: result.images ?? []
+  };
   query.value = "";
 }
 
