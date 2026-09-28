@@ -4,82 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>스마트 FAQ 가이드</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#f3f7f4">
 </head>
 <body>
-  <div class="faq-card">
-    <!-- 헤더 영역 -->
-    <header class="faq-header">
-      <div class="header-title">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-          <line x1="12" y1="17" x2="12.01" y2="17"></line>
-        </svg>
-        <h1>자주 묻는 질문 가이드</h1>
-      </div>
-      <button id="theme-toggle" class="icon-btn" aria-label="테마 변경">
-        <svg id="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
-    </header>
-
-    <!-- 검색창 영역 -->
-    <div class="search-box">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="text" id="search-input" placeholder="키워드로 검색해 보세요 (예: 신분증, 환불)" autocomplete="off">
-    </div>
-
-    <!-- 탐색 경로 (Breadcrumb) -->
-    <nav id="breadcrumb" class="breadcrumb" aria-label="탐색 경로"></nav>
-
-    <!-- 질문 및 답변 컨텐츠 영역 -->
-    <main class="content-area">
-      <h2 id="step-question" class="question-title">원하시는 안내 카테고리를 선택해 주세요</h2>
-      
-      <!-- 선택지 버튼 목록 -->
-      <div id="options-list" class="options-grid"></div>
-
-      <!-- 최종 답변 영역 -->
-      <div id="answer-container" class="answer-card hidden">
-        <div id="answer-content" class="answer-body"></div>
-        <div class="answer-actions">
-          <button id="copy-btn" class="secondary-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-            답변 복사
-          </button>
-          <div class="feedback-group">
-            <span>도움이 되었나요?</span>
-            <button class="feedback-btn" onclick="handleFeedback(true)">👍</button>
-            <button class="feedback-btn" onclick="handleFeedback(false)">👎</button>
-          </div>
-        </div>
-        <div id="toast" class="toast hidden">답변이 클립보드에 복사되었습니다!</div>
-      </div>
-
-      <!-- 검색 결과 전용 영역 -->
-      <div id="search-results" class="search-results-list hidden"></div>
-    </main>
-
-    <!-- 푸터 및 초기화 버튼 -->
-    <footer class="faq-footer">
-      <button id="reset-btn" class="reset-btn hidden">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="1 4 1 10 7 10"></polyline>
-          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-        </svg>
-        처음 단계로 돌아가기
-      </button>
-    </footer>
-  </div>
-
-  <script src="main.js"></script>
+  <div id="app"></div>
+  <script type="module" src="/main.js"></script>
 </body>
 </html>
