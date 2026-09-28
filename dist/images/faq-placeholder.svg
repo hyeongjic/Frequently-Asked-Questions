@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">FAQ 답변 이미지 자리표시자</title>
+  <desc id="description">연녹색 배경 위에 산과 해를 단순한 도형으로 표현한 정사각형 이미지</desc>
+  <rect width="512" height="512" rx="32" fill="#eaf5f0"/>
+  <circle cx="256" cy="256" r="154" fill="#d4ebe0"/>
+  <circle cx="327" cy="195" r="38" fill="#f5ca73"/>
+  <path d="M112 344 225 218l74 82 45-49 83 93v36H112z" fill="#75b99c"/>
+  <path d="m225 218 37 41-25-5-20 19-20-22zM344 251l22 26-18-4-17 14-18-20z" fill="#fff" opacity=".88"/>
+  <path d="M112 358h315v22H112z" fill="#4d9278" opacity=".35"/>
+</svg>

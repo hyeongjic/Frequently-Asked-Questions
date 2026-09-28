@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --page-bg: #f3f7f4;
+  --surface: #ffffff;
+  --ink: #1d302b;
+  --muted: #71827c;
+  --line: #dce7e1;
+  --accent: #197c68;
+  --tint: #eaf5f0;
+  --highlight: #c5edda;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #14211e;
+  --surface: #1d2d28;
+  --ink: #e8f1ec;
+  --muted: #a0b2aa;
+  --line: #354941;
+  --accent: #73c7a9;
+  --tint: #263d34;
+  --highlight: #365c48;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
